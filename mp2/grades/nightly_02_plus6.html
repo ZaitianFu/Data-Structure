@@ -1,0 +1,183 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grade Feedback</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <style>
+    .pl-external-grader-results .panel-heading {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .pl-external-grader-results .panel-heading .panel-heading-left {
+      flex: 1;
+      align-self: left;
+    }
+
+    .pl-external-grader-results .panel-heading .panel-heading-right {
+      align-self: right;
+    }
+
+    .pl-external-grader-results .panel-heading .panel-heading-right .glyphicon.glyphicon-chevron-down {
+      transition: all 400ms;
+    }
+
+    .pl-external-grader-results .panel-heading:not(.collapsed) .panel-heading-right .glyphicon.glyphicon-chevron-down {
+      transform: rotateX(180deg);
+    }
+
+    .pl-external-grader-results pre.terminal-output {
+      background: black;
+      white-space: pre-wrap;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: 200px;
+    }
+
+    .pl-external-grader-results pre.terminal-output > code {
+      color: white;
+      font-family: monospace;
+    }
+
+    .pl-external-grader-results pre.terminal-output.termial-output-question-panel {
+      margin: 0px;
+      border-radius: 0px;
+    }  
+    </style>
+
+
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="pl-external-grader-results">
+
+
+          <h3>Score:
+            <span style="color: hsla(211, 58%, 26%, 1)">
+              <strong>0/0 (0%)</strong>
+            </span>
+          </h3>
+
+          <h3>Test Results</h3>
+              <div class="panel panel-default">
+                <div class="panel-heading collapsed" data-toggle="collapse" data-target="#panel-0" style="cursor: pointer;">
+                  <div class="panel-heading-left">
+                    <h4 class="panel-title">
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color: #F44336"></span>
+                      <span style="color: #F44336; margin-left: 5px;"><strong>[0/0]</strong></span>
+                      <span style="margin-left: 5px;">Output from &#x60;make&#x60;</span>
+                    </h4>
+                  </div>
+                  <div class="panel-heading-right">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                  </div>
+                </div>
+                <div id="panel-0" class="panel-collapse collapse">
+                  <ul class="list-group">
+                    <li class="list-group-item"><strong>Max points:</strong> 0</li>
+                    <li class="list-group-item"><strong>Earned points:</strong> 0</li>
+                      <li class="list-group-item">
+                        <div><strong>Message</strong></div>
+                        <pre style="background: black; white-space: pre-wrap; overflow-y: auto; overflow-x: hidden; max-height: 200px"><code style="color: white; font-family: monospace;">In file included from Image.cpp:1:
+./Image.h:1:15: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]
+#ifndef IMAGE H
+              ^
+              //
+1 warning generated.
+In file included from tests/unit_tests.cpp:4:
+tests/../Image.h:1:15: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]
+#ifndef IMAGE H
+              ^
+              //
+tests/unit_tests.cpp:33:18: error: too few arguments to function call, single argument &#x27;a&#x27; was not specified
+  result.lighten();
+  ~~~~~~~~~~~~~~ ^
+tests/../Image.h:9:1: note: &#x27;lighten&#x27; declared here
+void lighten(double a);
+^
+tests/unit_tests.cpp:42:18: error: too few arguments to function call, single argument &#x27;a&#x27; was not specified
+  result.lighten();
+  ~~~~~~~~~~~~~~ ^
+tests/../Image.h:9:1: note: &#x27;lighten&#x27; declared here
+void lighten(double a);
+^
+tests/unit_tests.cpp:51:10: error: no member named &#x27;darken&#x27; in &#x27;Image&#x27;
+  result.darken(0.2);
+  ~~~~~~ ^
+tests/unit_tests.cpp:60:10: error: no member named &#x27;darken&#x27; in &#x27;Image&#x27;
+  result.darken(0.2);
+  ~~~~~~ ^
+tests/unit_tests.cpp:73:19: error: too few arguments to function call, single argument &#x27;a&#x27; was not specified
+  result.saturate();
+  ~~~~~~~~~~~~~~~ ^
+tests/../Image.h:10:1: note: &#x27;saturate&#x27; declared here
+void saturate(double a);
+^
+tests/unit_tests.cpp:87:10: error: no member named &#x27;grayscale&#x27; in &#x27;Image&#x27;
+  result.grayscale();
+  ~~~~~~ ^
+tests/unit_tests.cpp:97:10: error: no member named &#x27;grayscale&#x27; in &#x27;Image&#x27;
+  result.grayscale();
+  ~~~~~~ ^
+tests/unit_tests.cpp:110:10: error: no member named &#x27;rotateColor&#x27; in &#x27;Image&#x27;
+  result.rotateColor(90);
+  ~~~~~~ ^
+tests/unit_tests.cpp:119:10: error: no member named &#x27;rotateColor&#x27; in &#x27;Image&#x27;
+  result.rotateColor(90);
+  ~~~~~~ ^
+tests/unit_tests.cpp:122:10: error: no member named &#x27;rotateColor&#x27; in &#x27;Image&#x27;
+  result.rotateColor(-180);
+  ~~~~~~ ^
+tests/unit_tests.cpp:188:20: error: too many arguments to function call, expected single argument &#x27;a&#x27;, have 2 arguments
+  result.scale(36, 1000);
+  ~~~~~~~~~~~~     ^~~~
+tests/../Image.h:11:1: note: &#x27;scale&#x27; declared here
+void scale(double a);
+^
+tests/unit_tests.cpp:194:22: error: too many arguments to function call, expected single argument &#x27;a&#x27;, have 2 arguments
+  result.scale(1000, 120);
+  ~~~~~~~~~~~~       ^~~
+tests/../Image.h:11:1: note: &#x27;scale&#x27; declared here
+void scale(double a);
+^
+tests/unit_tests.cpp:202:21: error: too many arguments to function call, expected single argument &#x27;a&#x27;, have 2 arguments
+  result.scale(180, 50);
+  ~~~~~~~~~~~~      ^~
+tests/../Image.h:11:1: note: &#x27;scale&#x27; declared here
+void scale(double a);
+^
+1 warning and 13 errors generated.
+make: *** [unit_tests.o] Error 1
+</code></pre>
+                      </li>
+                      <li class="list-group-item">
+                        <div><strong>Output</strong></div>
+                        <pre style="background: black; white-space: pre-wrap; overflow-y: auto; overflow-x: hidden; max-height: 200px;"><code style="color: white; font-family: monospace;">clang++ -std&#x3D;c++1y -stdlib&#x3D;libc++ -c -g -O0 -Wall -Wextra -pedantic cs225/PNG.cpp
+clang++ -std&#x3D;c++1y -stdlib&#x3D;libc++ -c -g -O0 -Wall -Wextra -pedantic cs225/HSLAPixel.cpp
+clang++ -std&#x3D;c++1y -stdlib&#x3D;libc++ -c -g -O0 -Wall -Wextra -pedantic cs225/lodepng/lodepng.cpp
+clang++ -std&#x3D;c++1y -stdlib&#x3D;libc++ -c -g -O0 -Wall -Wextra -pedantic Image.cpp
+clang++ -std&#x3D;c++1y -stdlib&#x3D;libc++ -c -g -O0 -Wall -Wextra -pedantic tests/unit_tests.cpp
+</code></pre>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+      </div>
+      <hr>
+      <div class="text-muted">
+        Generated for <strong>zaitian2</strong>, using r<strong>10479</strong> (<strong>September 20th 2017, 12:08:38 am</strong>)
+      </div>
+    </div>
+  </body>
+
+</html>
